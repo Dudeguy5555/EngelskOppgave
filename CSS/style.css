@@ -1,0 +1,101 @@
+body {  /*Bakgrunn*/
+    background: url('bilder/Serj.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+}
+
+body::before { /*Overlegg for bakgrunnsbilde*/
+    content: ""; 
+    position: fixed;
+    inset: 0;
+    background: rgba(255,255,255,0.7);
+    z-index: 0;
+    pointer-events: none;
+}
+
+header, .navHolder, .InnholdHolder, .nextPageBtn { /*Flytter alt innhold over bakgrunnsbildet*/
+    position: relative;
+    z-index: 1;
+}
+
+.titleHolder { /*Tittelskrift*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titleHolder img {
+    width: 20vh;
+}
+
+nav { /*Navigasjonsmeny*/ 
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+nav a { /*Navigasjonslenker*/
+    font-size: 1.5rem;
+    padding: 18px 0;
+    color: #fff;
+    text-decoration: none;
+    text-align: left;
+    transition: background 0.2s;
+    display: block;
+}
+
+nav a:hover { /*Hover-effekt for navigasjonslenker*/
+    background: #44445a;
+}
+
+.navHolder { /*Navigasjonsmeny holder*/
+    background: #000064;
+    width: 250px;
+    min-height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.nextPageBtn { /*Neste side knapp*/
+    position: fixed;
+    bottom: 24px;
+    right: 32px;
+    background: #3498db;
+    color: #fff;
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    transition: background 0.2s;
+    z-index: 100;
+}
+
+.nextPageBtn:hover { /*Hover-effekt for neste side knapp*/
+    background: #217dbb;
+}
+
+.InnholdHolder { /*Holder for video & tekst*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.TextBox { /*Tekstboks style*/
+    flex: 1 1 auto;
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+    padding: 1rem;
+    background: #f8faff;
+    border: 1.5px dashed #217dbb;
+    border-radius: 6px;
+    margin: 0;
+    text-align: center;
+}
