@@ -1,5 +1,5 @@
 body {  /*Bakgrunn*/
-    background: url('bilder/Serj.jpg') no-repeat center center fixed;
+    background: url('../bilder/Serj.jpg') no-repeat center center fixed;
     background-size: cover;
     position: relative;
 }
@@ -94,7 +94,7 @@ nav a:hover { /*Hover-effekt for navigasjonslenker*/
     box-sizing: border-box;
     padding: 1rem;
     background: #f8faff;
-    border: 1.5px dashed #217dbb;
+    border: 1.5px solid #217dbb;
     border-radius: 6px;
     margin: 0;
     text-align: center;
