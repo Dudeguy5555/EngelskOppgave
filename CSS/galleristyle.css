@@ -20,3 +20,31 @@
     position: relative;
     z-index: 2;
 }
+
+.galleryItem {
+    position: relative;
+    display: inline-block;
+}
+
+.galleryTextBox { /*Style for tekstboksene i galleriet*/
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 180px;
+    background: rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    border: 1px solid #217dbb;
+    border-radius: 6px;
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    font-size: 1rem;
+    text-align: center;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.galleryItem:hover .galleryTextBox {
+    display: block;
+}
