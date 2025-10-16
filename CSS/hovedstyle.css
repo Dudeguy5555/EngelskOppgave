@@ -63,7 +63,7 @@ nav a:hover {
 .navHolder {
   /*Navigasjonsmeny holder*/
   background: rgba(176, 170, 170, 0.7);
-  width: 180px;
+  width: 200px;
   min-height: 100vh;
   position: fixed;
   top: 0;
