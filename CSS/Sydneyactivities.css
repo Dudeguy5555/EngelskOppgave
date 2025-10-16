@@ -24,8 +24,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 340px;
-  height: 340px;
+  width: 380px;
+  height: 380px;
   background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
     url("../Medie/bilder/KunkCobain.jpg") center center/cover no-repeat;
   border-radius: 16px;
@@ -36,6 +36,10 @@
   position: relative;
   color: #fff;
   overflow: hidden;
+}
+
+.wideActivityItem {
+  width: 480px;
 }
 
 .activityItem:hover {
@@ -61,6 +65,7 @@
   border-radius: 8px;
   padding: 14px;
   text-align: center;
+  justify-content: center;
   position: absolute;
   left: 16px;
   right: 16px;
