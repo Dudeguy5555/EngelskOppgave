@@ -5,6 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="../CSS/hovedstyle.css" />
+    <link rel="stylesheet" href="../CSS/Sydneyactivities.css" />
   </head>
-  <body></body>
+  <body>
+    <a href="Sydney.html" class="exitBtn">Back</a>
+    <h1 class="PleaseSelect">Please select an activity to display text</h1>
+
+    <div class="activitiesHolder">
+      <div class="activityItem" onclick="toggleText(this)">
+        <h3>Opera House Tour</h3>
+        <div class="activityText">
+          Placeholder: Explore the iconic Sydney Opera House with a guided tour.
+        </div>
+      </div>
+      <div class="activityItem" onclick="toggleText(this)">
+        <h3>Harbour Bridge Climb</h3>
+        <div class="activityText">
+          Placeholder: Experience breathtaking views from the top of the Harbour
+          Bridge.
+        </div>
+      </div>
+      <div class="activityItem" onclick="toggleText(this)">
+        <h3>Bondi Beach Surfing</h3>
+        <div class="activityText">
+          Placeholder: Try surfing at the world-famous Bondi Beach.
+        </div>
+      </div>
+      <div class="activityItem" onclick="toggleText(this)">
+        <h3>Taronga Zoo Visit</h3>
+        <div class="activityText">
+          Placeholder: Meet Australian wildlife at Taronga Zoo.
+        </div>
+      </div>
+      <div class="activityItem" onclick="toggleText(this)">
+        <h3>Royal Botanic Garden Walk</h3>
+        <div class="activityText">
+          Placeholder: Enjoy a relaxing walk in the beautiful gardens.
+        </div>
+      </div>
+    </div>
+    <script>
+      function toggleText(item) {
+        const text = item.querySelector(".activityText");
+        text.style.display = text.style.display === "block" ? "none" : "block";
+      }
+    </script>
+  </body>
 </html>
