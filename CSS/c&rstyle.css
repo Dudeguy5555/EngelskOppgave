@@ -1,0 +1,37 @@
+.BybildeHolder {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center; /* sentrerer på y-aksen */
+  gap: 32px;
+  margin: 80px 0 0 220px; /* økt toppmargin for mer sentrering */
+}
+
+.BybildeHolder img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  background: #fff;
+  transition: transform 0.2s;
+}
+
+.BybildeHolder a:hover img {
+  transform: scale(1.05);
+}
+
+.bybildeItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bybildeItem h3 {
+  margin-bottom: 12px;
+  font-size: 1.8rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 8px 16px;
+  border-radius: 8px;
+}
