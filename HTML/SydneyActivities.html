@@ -15,12 +15,8 @@
     <h1 class="PleaseSelect">Please select an activity to display text</h1>
 
     <div class="activitiesHolder">
-      <div
-        class="activityItem"
-        style="--bg-image: url('../Medie/bilder/KunkCobain.jpg')"
-        onclick="toggleText(this)"
-      >
-        <h3>Visit Sydney Opera House</h3>
+      <div class="activityItem" onclick="toggleText(this)" id="operaHouseTour">
+        <h3>Opera House</h3>
         <div class="activityText">
           Starting off with the most iconic landmark in Sydney, the opera house!
           There are multiple ways to experience the Sydney Opera House. Not all
@@ -33,7 +29,8 @@
           on both the show and the seating.
         </div>
       </div>
-      <div class="activityItem" onclick="toggleText(this)">
+
+      <div class="activityItem" id="BridgeClimb" onclick="toggleText(this)">
         <h3>Harbour Bridge Climb</h3>
         <div class="activityText">
           Take the climb on the Sydney Harbour Bridge to see the view and feel
@@ -45,7 +42,12 @@
           wallet.
         </div>
       </div>
-      <div class="activityItem" onclick="toggleText(this)">
+
+      <div
+        class="activityItem"
+        id="BondiBeachSurfing"
+        onclick="toggleText(this)"
+      >
         <h3>Bondi Beach Surfing</h3>
         <div class="activityText">
           Visit the world-famous Bondi Beach, which is accessible by a short bus
@@ -56,7 +58,8 @@
           place to grab a bite, in true Aussie fashion the people were pleasant.
         </div>
       </div>
-      <div class="activityItem wideActivityItem" onclick="toggleText(this)">
+
+      <div class="activityItem" id="WhaleSafari" onclick="toggleText(this)">
         <h3>Whale Safari</h3>
         <div class="activityText">
           Go on a whale safari from Sydney to see the majestic humpback whales
@@ -71,7 +74,12 @@
           and type of tour.
         </div>
       </div>
-      <div class="activityItem wideActivityItem" onclick="toggleText(this)">
+
+      <div
+        class="activityItem"
+        id="RoyalBotanicGarden"
+        onclick="toggleText(this)"
+      >
         <h3>Royal Botanic Garden</h3>
         <div class="activityText">
           The Royal Botanic Garden is a large, beautiful garden located in
@@ -84,6 +92,7 @@
         </div>
       </div>
     </div>
+
     <script>
       function toggleText(item) {
         const text = item.querySelector(".activityText");
