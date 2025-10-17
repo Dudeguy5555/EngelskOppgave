@@ -24,10 +24,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 380px;
-  height: 380px;
+  width: 340px;
+  height: 340px;
+  /* use per-element custom property for the image, with an overlay for readability */
   background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
-    url("../Medie/bilder/KunkCobain.jpg") center center/cover no-repeat;
+    var(--bg-image);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   border-radius: 16px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
   padding: 24px 18px;
