@@ -1,0 +1,18 @@
+.exitBtn {
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  background: #e74c3c;
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+  transition: background 0.2s;
+}
+
+.exitBtn:hover {
+  background: #c0392b;
+}
