@@ -60,17 +60,17 @@
 
 .activityItem#operaHouseTour {
   background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
-    url("../Medie/bilder/popEM.jpg") center center/cover no-repeat;
+    url("../Medie/bilder/20240629_124308kopi.jpg") center center/cover no-repeat;
 }
 
 .activityItem#BridgeClimb {
   background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
-    url("../Medie/bilder/bridgeClimb.jpg") center center/cover no-repeat;
+    url("../Medie/bilder/SydneyBridgeClimb.jpg") center center/cover no-repeat;
 }
 
 .activityItem#BondiBeachSurfing {
   background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
-    url("../Medie/bilder/bondiBeach.jpg") center center/cover no-repeat;
+    url("../Medie/bilder/BondiBeachSurfing.jpg") center center/cover no-repeat;
 }
 
 .activityItem#WhaleSafari {
@@ -80,7 +80,8 @@
 
 .activityItem#RoyalBotanicGarden {
   background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
-    url("../Medie/bilder/royalBotanicGarden.jpg") center center/cover no-repeat;
+    url("../Medie/bilder/RoyalBotanicGardens.jpeg") center center/cover
+      no-repeat;
 }
 
 .activityItem:hover {
