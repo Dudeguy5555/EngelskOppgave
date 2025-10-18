@@ -4,12 +4,12 @@
   justify-content: space-around;
   align-items: center; /* sentrerer på y-aksen */
   gap: 32px;
-  margin: 130px 0 0 220px; /* økt toppmargin for mer sentrering */
+  margin: 0px 0 0 220px; /* økt toppmargin for mer sentrering */
 }
 
 .BybildeHolder img {
-  width: 220px;
-  height: 220px;
+  width: 300px;
+  height: 300px;
   object-fit: cover;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
