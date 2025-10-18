@@ -16,3 +16,41 @@
 .exitBtn:hover {
   background: #c0392b;
 }
+
+.topicHolder {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 64px;
+  margin-left: 128px;
+  margin-top: 64px;
+}
+
+.topicbildeitem,
+.bybildeItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.topicbildeitem h3,
+.bybildeItem h3 {
+  margin-bottom: 12px;
+  max-width: 360px;
+  font-size: 1.4rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+.topicbildeitem img,
+.bybildeItem img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  background: #fff;
+}
