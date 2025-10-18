@@ -100,7 +100,7 @@
 
 .activityText {
   display: none; /* shown by JS when clicked */
-  font-size: 1rem;
+  font-size: 1.15rem;
   color: #fff;
   background: rgba(33, 125, 187, 0.55);
   border-radius: 8px;
