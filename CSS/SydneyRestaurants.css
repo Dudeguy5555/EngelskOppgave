@@ -17,6 +17,14 @@
   background: #c0392b;
 }
 
+h1 {
+  margin-top: 64px;
+  text-align: center;
+  font-size: 3rem;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
 .topicHolder {
   display: flex;
   flex-direction: row;
