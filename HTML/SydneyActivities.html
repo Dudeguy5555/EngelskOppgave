@@ -99,6 +99,26 @@
         const text = item.querySelector(".activityText");
         text.style.display = text.style.display === "block" ? "none" : "block";
       }
+      function toggleText(item) {
+        const text = item.querySelector(".activityText");
+        text.style.display = text.style.display === "block" ? "none" : "block";
+      }
+
+      // Hover-follow effect
+      document.querySelectorAll(".activityItem").forEach((card) => {
+        card.addEventListener("mousemove", (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
+
+          // divide by a number to reduce intensity (5 = subtle, 2 = strong)
+          card.style.transform = `translate(${x / 10}px, ${y / 10}px)`;
+        });
+
+        card.addEventListener("mouseleave", () => {
+          card.style.transform = "translate(0, 0)";
+        });
+      });
     </script>
   </body>
 </html>

@@ -114,3 +114,9 @@
   bottom: 20px;
   z-index: 3;
 }
+
+.activityItem {
+  transition: transform 0.3s ease-out;
+  will-change: transform;
+  cursor: pointer;
+}
