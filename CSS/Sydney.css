@@ -1,8 +1,23 @@
+:root {
+  --nav-width: 240px; /* set to your nav's width */
+  --nav-gap: 16px; /* desired space between nav and content */
+}
+
+/* apply once to the page content wrapper (better than per-row margin) */
+main,
+.contentWrapper {
+  margin-left: calc(var(--nav-width) + var(--nav-gap));
+}
+
+/* keep the flex for items */
 .topicHolder {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap; /* allow items to wrap onto multiple rows */
+  justify-content: flex-start; /* align wrapped rows to the left (after margin change to center if you prefer centered rows */
   gap: 64px;
-  margin-left: 256px;
+  margin-left: 256px; /* keeps fixed distance from left nav */
+  align-items: flex-start;
+  align-content: flex-start; /* control vertical alignment of wrapped rows */
 }
 
 .topicbildeitem,
