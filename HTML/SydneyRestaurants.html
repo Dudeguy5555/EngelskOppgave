@@ -55,6 +55,97 @@
           <img src="../Medie/bilder/Hubert.jpg" alt="SydneyBlog" />
         </a>
       </div>
+    </div>
+
+    <!-- Coin flip minigame: enter two choices and flip for which one to pick -->
+    <section class="coin-flip-game">
+      <h2>Can't decide? Flip a coin!</h2>
+      <div class="choices">
+        <label>
+          Choice A
+          <input id="choiceA" type="text" placeholder="e.g. Bennerlong" />
+        </label>
+        <label>
+          Choice B
+          <input id="choiceB" type="text" placeholder="e.g. Mr. Wong's" />
+        </label>
+      </div>
+      <div class="controls">
+        <button id="flipBtn">Flip the coin</button>
+        <button id="swapBtn" type="button">Swap</button>
+      </div>
+      <div class="coin-row">
+        <div id="coin" class="coin">?</div>
+        <div id="result" class="result" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <style>
+    .coin-flip-game{ margin-left:256px; margin-top:32px; padding:18px; max-width:900px; background: linear-gradient(135deg,#1e88e5 0%,#1976d2 100%); border-radius:12px; box-shadow:0 8px 24px rgba(18,52,86,0.45); }
+    .coin-flip-game h2{ color:#fff; margin-bottom:12px }
+    .coin-flip-game .choices{ display:flex; gap:12px; margin-bottom:12px }
+    .coin-flip-game label{ display:flex; flex-direction:column; color:#fff; font-weight:600 }
+    .coin-flip-game input{ padding:8px 10px; border-radius:6px; border:1px solid rgba(255,255,255,0.15); background:rgba(255,255,255,0.04); color:#fff }
+    .coin-flip-game .controls{ display:flex; gap:8px; margin-bottom:12px }
+    .coin-flip-game button{ padding:8px 12px; border-radius:6px; border:none; cursor:pointer; background:#1e88e5; color:#fff }
+    .coin-row{ display:flex; gap:16px; align-items:center }
+    .coin{ width:100px; height:100px; border-radius:50%; background:linear-gradient(180deg,#ffd966,#f39c12); display:flex; align-items:center; justify-content:center; font-weight:700; color:#2b2b2b; font-size:0.9rem; box-shadow:0 6px 18px rgba(0,0,0,0.35); backface-visibility: hidden; transform-style: preserve-3d }
+    .coin.flipping{ animation: coinflip 1.2s cubic-bezier(.2,.9,.3,1) }
+    @keyframes coinflip{ 0%{ transform: rotateX(0) } 25%{ transform: rotateX(380deg) } 50%{ transform: rotateX(720deg) } 100%{ transform: rotateX(1080deg) } }
+    .result{ color:#fff; font-size:1.05rem }
+    .coin-flip-game input::placeholder {
+    color: rgba(255, 255, 255, 0.6); }
+    </style>
+
+    <script>
+    (function(){
+      const btn = document.getElementById('flipBtn');
+      const swap = document.getElementById('swapBtn');
+      const coin = document.getElementById('coin');
+      const res = document.getElementById('result');
+      const aIn = document.getElementById('choiceA');
+      const bIn = document.getElementById('choiceB');
+
+      function getChoices(){
+        const a = aIn.value.trim() || 'Choice A';
+        const b = bIn.value.trim() || 'Choice B';
+        return [a,b];
+      }
+
+      function showResult(text){
+        res.textContent = text;
+      }
+
+      btn.addEventListener('click', ()=>{
+        const [a,b] = getChoices();
+        btn.disabled = true;
+        showResult('Flipping...');
+        coin.classList.remove('flipping');
+        // force reflow to restart animation
+        void coin.offsetWidth;
+        coin.classList.add('flipping');
+
+        // pick result randomly
+        const pick = Math.random() < 0.5 ? 0 : 1;
+
+        // after animation, show result and label coin
+        setTimeout(()=>{
+          coin.classList.remove('flipping');
+          coin.textContent = pick===0 ? 'A' : 'B';
+          showResult(pick===0 ? `Result: ${a}` : `Result: ${b}`);
+          btn.disabled = false;
+        }, 1200);
+      });
+
+      swap.addEventListener('click', ()=>{
+        const t = aIn.value; aIn.value = bIn.value; bIn.value = t;
+      });
+
+      // allow Enter to flip when in input
+      [aIn,bIn].forEach(i=> i.addEventListener('keydown', e=>{ if(e.key==='Enter'){ btn.click(); }}));
+    })();
+    </script>
+
   <script>
   (function setMonthFavicon(){
     const month = new Date().getMonth() + 1; // 1–12
