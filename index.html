@@ -31,5 +31,27 @@
         will be added soon. Feel free to explore and learn, Navigate using the menu on the left! We have
         written content as well as video blogs from our trip to Australia. Please enjoy your stay!
       </p>
+    <script>
+  function setSeasonFavicon() {
+    const month = new Date().getMonth() + 1; // 1–12
+    const favicon = document.getElementById("favicon");
+
+    let icon = "";
+
+    if (month >= 3 && month <= 5) {
+      icon = "icons/vaar.png";       // 🌸 Vår
+    } else if (month >= 6 && month <= 8) {
+      icon = "icons/sommer.png";     // ☀️ Sommer
+    } else if (month >= 9 && month <= 11) {
+      icon = "icons/host.png";       // 🍂 Høst
+    } else {
+      icon = "icons/vinter.png";     // ❄️ Vinter
+    }
+
+    favicon.href = icon;
+  }
+
+  setSeasonFavicon();
+</script>
     </body>
 </html>
