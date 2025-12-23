@@ -91,5 +91,33 @@
         </li>
       </ul>
     </div>
+    <script>
+      (function setMonthFavicon() {
+        const month = new Date().getMonth() + 1; // 1–12
+        const iconMap = {
+          spring: "../Medie/Icons/springicon.png", // Mar–May
+          summer: "../Medie/Icons/summericon.png", // Jun–Aug
+          autumn: "../Medie/Icons/autumnicon.png", // Sep–Nov
+          winter: "../Medie/Icons/wintericon.png", // Dec–Feb
+        };
+
+        let chosen = iconMap.winter;
+        if (month >= 3 && month <= 5) chosen = iconMap.spring;
+        else if (month >= 6 && month <= 8) chosen = iconMap.summer;
+        else if (month >= 9 && month <= 11) chosen = iconMap.autumn;
+
+        let link = document.getElementById("favicon");
+        if (!link) {
+          link = document.createElement("link");
+          link.id = "favicon";
+          link.rel = "icon";
+          link.type = "image/png";
+          document.head.appendChild(link);
+        }
+
+        // Add a cache-busting param so browsers pick up changes when month changes
+        link.href = chosen + "?m=" + month;
+      })();
+    </script>
   </body>
 </html>
