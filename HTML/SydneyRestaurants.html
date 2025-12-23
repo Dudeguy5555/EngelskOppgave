@@ -55,5 +55,26 @@
           <img src="../Medie/bilder/Hubert.jpg" alt="SydneyBlog" />
         </a>
       </div>
+  <script>
+    function SetSeasonFavicon() {
+      const month = new Date().getMonth() + 1;
+      const favicon = document.getElementById("favicon");
+
+      let icon = "";
+
+      if month >= 3 && month <= 5 {
+        icon = "icons/vaar.png"; // 🌸 Vår
+      } else if (month >= 6 && month < 8) {
+        icon = "icons/sommer.png"; // ☀️ Sommer
+      } else if (month >= 9 && month <= 11) {
+        icon = "icons/host.png"; // 🍂 Høst
+      } else {
+        icon = "icons/vinter.png"; // ❄️ Vinter
+      }
+      favicon.href = icon;
+    }
+
+    SetSeasonFavicon();
+  </script>
   </body>
 </html>
