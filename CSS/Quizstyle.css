@@ -13,6 +13,13 @@
   transition: background 0.2s;
 }
 
+.quizContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+
 .exitBtn:hover {
   background: #c0392b;
 }
@@ -28,4 +35,42 @@
   font-size: 3rem;
   color: #ffffff;
   margin: 32px 0;
+}
+
+.question {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.option {
+  padding: 10px;
+  background: #ffffff;
+  border: 1pxs solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.option:hover {
+  background: #e0e0e0;
+}
+
+.option.selected {
+  background: #4caf50;
+  color: #fff;
+}
+
+#result {
+  font-size: 1.2rem;
+  color: #333;
+  text-align: center;
+  margin-top: 20px;
 }

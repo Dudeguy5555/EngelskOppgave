@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../CSS/hovedstyle.css" />
     <link rel="stylesheet" href="../CSS/Quizstyle.css" />
-    <title>Quiz</title>
+    <title>Question 2</title>
   </head>
   <body>
     <video class="bgVideo" autoplay muted loop playsinline>
@@ -14,21 +14,14 @@
     <header>
       <div class="headerHolder">
         <div class="titleHolder">
-          <h1>Take Our Quiz</h1>
+          <h1>Question 2</h1>
         </div>
       </div>
-      <a href="../index.html" class="exitBtn">Back</a>
+      <a href="question1.html" class="exitBtn">Back</a>
     </header>
     <div class="quizContainer">
-      <button onclick="startQuiz()">Start Quiz</button>
+      <div id="question"></div>
     </div>
-
-    <script>
-      function startQuiz() {
-        localStorage.removeItem("quizAnswers");
-        window.location.href = "question1.html";
-      }
-    </script>
 
     <script>
       (function setMonthFavicon() {
@@ -56,6 +49,30 @@
 
         link.href = chosen + "?m=" + month;
       })();
+    </script>
+    <script src="../JS/questions.js"></script>
+    <script>
+      const questionIndex = 1;
+      const q = questions[questionIndex];
+      const questionDiv = document.getElementById("question");
+      questionDiv.innerHTML = `<div class="question">${q.question}</div>
+        <div class="options">
+          ${q.options
+            .map(
+              (option, i) =>
+                `<div class="option" onclick="selectOption(${i})">${option}</div>`
+            )
+            .join("")}
+        </div>`;
+
+      function selectOption(optionIndex) {
+        // Save answer
+        let answers = JSON.parse(localStorage.getItem("quizAnswers")) || [];
+        answers[questionIndex] = optionIndex;
+        localStorage.setItem("quizAnswers", JSON.stringify(answers));
+        // Go to next
+        window.location.href = "question3.html";
+      }
     </script>
   </body>
 </html>

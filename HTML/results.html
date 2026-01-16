@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../CSS/hovedstyle.css" />
     <link rel="stylesheet" href="../CSS/Quizstyle.css" />
-    <title>Quiz</title>
+    <title>Quiz Results</title>
   </head>
   <body>
     <video class="bgVideo" autoplay muted loop playsinline>
@@ -14,21 +14,14 @@
     <header>
       <div class="headerHolder">
         <div class="titleHolder">
-          <h1>Take Our Quiz</h1>
+          <h1>Quiz Results</h1>
         </div>
       </div>
       <a href="../index.html" class="exitBtn">Back</a>
     </header>
     <div class="quizContainer">
-      <button onclick="startQuiz()">Start Quiz</button>
+      <div id="result"></div>
     </div>
-
-    <script>
-      function startQuiz() {
-        localStorage.removeItem("quizAnswers");
-        window.location.href = "question1.html";
-      }
-    </script>
 
     <script>
       (function setMonthFavicon() {
@@ -56,6 +49,16 @@
 
         link.href = chosen + "?m=" + month;
       })();
+    </script>
+    <script src="../JS/questions.js"></script>
+    <script>
+      const answers = JSON.parse(localStorage.getItem("quizAnswers")) || [];
+      let score = 0;
+      questions.forEach((q, index) => {
+        if (answers[index] === q.correct) score++;
+      });
+      const resultDiv = document.getElementById("result");
+      resultDiv.innerHTML = `<p>You scored ${score} out of ${questions.length}</p>`;
     </script>
   </body>
 </html>
