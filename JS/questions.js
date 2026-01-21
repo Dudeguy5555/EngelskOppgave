@@ -5,7 +5,7 @@ const questions = [
     correct: 1,
   },
   {
-    question: "learn defeat",
+    question: "which animal is a national symbol of Australia?",
     options: ["Kangaroo", "Panda", "Elephant"],
     correct: 0,
   },
@@ -26,3 +26,5 @@ const questions = [
     correct: 1,
   },
 ];
+
+export { questions };

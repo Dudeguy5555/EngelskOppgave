@@ -1,34 +1,35 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../CSS/hovedstyle.css" />
     <link rel="stylesheet" href="../CSS/Quizstyle.css" />
-    <title>Quiz</title>
+    <script type="module" src="../JS/questions.js"></script>
+    <script type="module" src="../JS/Quiz.js"></script>
+    <title>Document</title>
   </head>
   <body>
     <video class="bgVideo" autoplay muted loop playsinline>
       <source src="../Medie/Videoer/MarketPliers.mp4" type="video/mp4" />
     </video>
-    <header>
-      <div class="headerHolder">
-        <div class="titleHolder">
-          <h1>Take Our Quiz</h1>
+    <a href="../index.html" class="exitBtn">Back</a>
+
+    <div id="quiz-container">
+      <div id="question-container">
+        <h2 id="question"></h2>
+        <div id="options">
+          <button class="option-btn" data-index="0"></button>
+          <button class="option-btn" data-index="1"></button>
+          <button class="option-btn" data-index="2"></button>
         </div>
       </div>
-      <a href="../index.html" class="exitBtn">Back</a>
-    </header>
-    <div class="quizContainer">
-      <button onclick="startQuiz()">Start Quiz</button>
+      <div id="result-container" style="display: none">
+        <h2>Quiz Complete!</h2>
+        <p id="score"></p>
+        <button id="restart-btn">Restart Quiz</button>
+      </div>
     </div>
-
-    <script>
-      function startQuiz() {
-        localStorage.removeItem("quizAnswers");
-        window.location.href = "question1.html";
-      }
-    </script>
 
     <script>
       (function setMonthFavicon() {
@@ -54,6 +55,7 @@
           document.head.appendChild(link);
         }
 
+        // Add a cache-busting param so browsers pick up changes when month changes
         link.href = chosen + "?m=" + month;
       })();
     </script>
