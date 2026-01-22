@@ -1,31 +1,9 @@
+// JS/Quiz.js
 import { questions } from "./questions.js";
+import { playKornAudio, loadAudio } from "./KornAudio.js";
 
 let currentQuestionIndex = 0;
 let score = 0;
-let audioContext;
-let audioBuffer;
-
-async function loadAudio() {
-  try {
-    audioContext = new (window.AudioContext || window.webkitAudioContext)();
-    const response = await fetch("../Medie/korn-twist-audiotrimmer.mp3");
-    const arrayBuffer = await response.arrayBuffer();
-    audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
-  } catch (error) {
-    console.error("Error loading audio:", error);
-  }
-}
-
-function playAudio() {
-  if (!audioBuffer) return;
-  if (audioContext.state === "suspended") {
-    audioContext.resume();
-  }
-  const source = audioContext.createBufferSource();
-  source.buffer = audioBuffer;
-  source.connect(audioContext.destination);
-  source.start(0);
-}
 
 function loadQuestion() {
   const question = questions[currentQuestionIndex];
@@ -41,7 +19,7 @@ function selectOption(index) {
   if (index === question.correct) {
     score++;
   }
-  playAudio(); // Play sound using Web Audio API
+  playKornAudio(); // Play sound using Web Audio API
   currentQuestionIndex++;
   if (currentQuestionIndex < questions.length) {
     loadQuestion();
